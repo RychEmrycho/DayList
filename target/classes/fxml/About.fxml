@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.validation.RequiredFieldValidator?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/Logo%20Developnerz.png" />
+               </image>
+            </ImageView>
+            <Label styleClass="qf-30-b" text="DayList" textFill="#323232" />
+            <Label layoutX="245.0" layoutY="187.0" prefHeight="51.0" prefWidth="244.0" styleClass="qf-15-b" text="Organize your day as easy as possible" textAlignment="CENTER" textFill="#323232" wrapText="true" />
+            <Label layoutX="256.0" layoutY="240.0" styleClass="qf-13" text="Build version v.0.0.1-alpha release" textFill="#323232" />
+            <Label layoutX="195.0" layoutY="321.0" styleClass="qf-13" text="This software is built for academic purpose" textFill="#323232" />
+         </children>
+      </VBox>
+   </center>
+   <bottom>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <Label styleClass="qf-15-b" text="Team" textFill="#323232" />
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label styleClass="qf-15" text="Andreas" textFill="#323232" />
+                        <Label layoutX="10.0" layoutY="10.0" styleClass="qf-15" text="11S16002" textFill="#323232" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label styleClass="qf-15" text="Anita" textFill="#323232" />
+                        <Label layoutX="10.0" layoutY="10.0" styleClass="qf-15" text="11S16014" textFill="#323232" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label styleClass="qf-15" text="Emrycho" textFill="#323232" />
+                        <Label layoutX="10.0" layoutY="10.0" styleClass="qf-15" text="11S16025" textFill="#323232" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label styleClass="qf-15" text="Fernando" textFill="#323232" />
+                        <Label layoutX="10.0" layoutY="10.0" styleClass="qf-15" text="11S16043" textFill="#323232" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label styleClass="qf-15" text="Melissa" textFill="#323232" />
+                        <Label layoutX="10.0" layoutY="10.0" styleClass="qf-15" text="11S16010" textFill="#323232" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </bottom>
+</BorderPane>

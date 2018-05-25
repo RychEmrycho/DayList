@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.stage.Screen?>
+<?import javafx.scene.shape.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView ?>
+
+<StackPane fx:id="root" alignment="CENTER" maxHeight="${screen.visualBounds.height*0.95}" maxWidth="${screen.visualBounds.width}" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.daylist.controller.DashboardContentController">
+    <fx:define>
+        <Screen fx:factory="getPrimary" fx:id="screen" />
+    </fx:define>
+    <HBox fx:id="topContent" alignment="CENTER" maxHeight="${screen.visualBounds.height*0.95}" maxWidth="${screen.visualBounds.width}" >
+        <children>
+            <BorderPane fx:id="leftSides" prefHeight="0" prefWidth="${root.width*0.8}" style="-fx-background-color: #FFFFFF; ">
+                <top>
+                    <BorderPane>
+                        <left>
+                            <Label text="Today and upcoming task" textFill="#212121" styleClass="qf-15-b">
+                                <padding>
+                                    <Insets bottom="15.0" left="10.0" right="10.0" top="15.0" />
+                                </padding>
+                            </Label>
+                        </left>
+                        <right>
+                            <HBox alignment="CENTER_RIGHT" spacing="15.0">
+                                <children>
+                                    <!--<JFXTextField fx:id="searhField" promptText="Search" style="-fx-background-color: #ECEFF1;">
+                                        <padding>
+                                            <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                                        </padding>
+                                    </JFXTextField>-->
+                                    <JFXButton fx:id="refreshBtn"  style="-fx-background-color: #714cfe; -fx-fill: white" text="Refresh" textFill="WHITE" >
+                                        <graphic>
+                                            <FontAwesomeIconView glyphName="REFRESH" style=" -fx-fill: white" />
+                                        </graphic>
+                                        <padding>
+                                            <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                                        </padding>
+                                    </JFXButton>
+                                    <JFXButton fx:id="sortBtnAsc"  style="-fx-background-color: #714cfe;" text="Sort Asc" textFill="WHITE" >
+                                        <graphic>
+                                            <FontAwesomeIconView glyphName="SORT_AMOUNT_ASC" style=" -fx-fill: white" />
+                                        </graphic>
+                                        <padding>
+                                            <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                                        </padding>
+                                    </JFXButton>
+                                    <JFXButton fx:id="sortBtnDesc"  style="-fx-background-color: #714cfe;" text="Sort Desc" textFill="WHITE" >
+                                        <graphic>
+                                            <FontAwesomeIconView glyphName="SORT_AMOUNT_DESC" style=" -fx-fill: white" />
+                                        </graphic>
+                                        <padding>
+                                            <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                                        </padding>
+                                    </JFXButton>
+                                </children>
+                                <padding>
+                                    <Insets bottom="15.0" left="10.0" right="10.0" top="15.0" />
+                                </padding>
+                            </HBox>
+                        </right>
+                    </BorderPane>
+                    <!--<Separator orientation="HORIZONTAL"/>-->                
+                </top>
+                <center>
+                    <JFXListView prefWidth="${leftSides.width}" fx:id="taskListViewContainer">
+                        <placeholder>
+                            <VBox alignment="CENTER" spacing="15.0">
+                                <children>
+                                    <!--<Label text="You still not have any task yet, click Add Task to create your first task" />-->
+                                    <Label text="No task found, click Add Task to create task." textFill="#212121" styleClass="qf-15-b">
+                                        <padding>
+                                            <Insets bottom="15.0" left="10.0" right="10.0" top="15.0" />
+                                        </padding>
+                                    </Label>
+                                    <JFXButton fx:id="addTaskEmptyButton"  style="-fx-background-color: #714cfe;" text="Add Task" textFill="WHITE" >
+                                        <graphic>
+                                            <FontAwesomeIconView glyphName="PLUS_CIRCLE"  size="15" style=" -fx-fill: white"/>
+                                        </graphic>
+                                        <padding>
+                                            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                        </padding>
+                                    </JFXButton>
+                                </children>
+                            </VBox>
+                        </placeholder>
+                    </JFXListView>
+                </center>
+                <padding>
+                    <Insets bottom="15.0" left="5.0" right="15.0" top="15.0" />
+                </padding>
+            </BorderPane>
+            <Separator orientation="VERTICAL"/>
+            <VBox fx:id="rightSides" alignment="TOP_CENTER" spacing="15.0" >
+                <children>
+                    <VBox fx:id="addTaskButtonContainer" alignment="CENTER" spacing="15.0" style="-fx-background-color: #FFFFFF" >
+                        <children>
+                            <JFXButton alignment="CENTER" fx:id="addTaskButton" buttonType="RAISED" contentDisplay="TEXT_ONLY" style="-fx-background-color: #dd0074" text="+" textAlignment="CENTER" textFill="WHITE" styleClass="qf-30-b" />
+                            <Label text="Add task" style="-fx-text-fill: #dd0074" styleClass="qf-15-b"/>
+                        </children>
+                        <padding>
+                            <Insets top="15" bottom="15"/>
+                        </padding>
+                    </VBox>
+                    <BorderPane fx:id="labelContainer" minHeight="250" style="-fx-background-color: tomato ">
+                        <top>
+                            <StackPane minHeight="35" style="-fx-background-color: #ef0078" >
+                                <Label text="Priority" style="-fx-text-fill: #FFFFFF"/>
+                            </StackPane>
+                        </top>
+                        <center>
+                            <JFXListView fx:id="priorityList">
+                                <Label text="Optional" >
+                                    <font>
+                                        <Font name="Quicksand Regular" />
+                                    </font>
+                                    <graphic>
+                                        <StackPane styleClass="custom-jfx-list-view-icon-container">
+                                            <Circle  fill="grey" radius="8" />
+                                        </StackPane>
+                                    </graphic>
+                                </Label>
+                                <Label text="Normal" >
+                                    <font>
+                                        <Font name="Quicksand Regular" />
+                                    </font>
+                                    <graphic>
+                                        <StackPane styleClass="custom-jfx-list-view-icon-container">
+                                            <Circle  fill="green" radius="8" />
+                                        </StackPane>
+                                    </graphic>
+                                </Label>
+                                <Label text="Medium" >
+                                    <font>
+                                        <Font name="Quicksand Regular" />
+                                    </font>
+                                    <graphic>
+                                        <StackPane styleClass="custom-jfx-list-view-icon-container">
+                                            <Circle  fill="yellow" radius="8" />
+                                        </StackPane>
+                                    </graphic>
+                                </Label>
+                                <Label text="Important" >
+                                    <font>
+                                        <Font name="Quicksand Regular" />
+                                    </font>
+                                    <graphic>
+                                        <StackPane styleClass="custom-jfx-list-view-icon-container">
+                                            <Circle  fill="orange" radius="8" />
+                                        </StackPane>
+                                    </graphic>
+                                </Label>
+                                <Label text="Emergency" >
+                                    <font>
+                                        <Font name="Quicksand Regular" />
+                                    </font>
+                                    <graphic>
+                                        <StackPane styleClass="custom-jfx-list-view-icon-container">
+                                            <Circle  fill="red" radius="8" />
+                                        </StackPane>
+                                    </graphic>
+                                </Label>
+                                <padding>
+                                    <Insets top="15"/>
+                                </padding>
+                            </JFXListView>
+                        </center>
+                    </BorderPane>
+                </children>
+                <HBox.margin>
+                    <Insets left="15"/>
+                </HBox.margin>
+            </VBox>
+        </children>
+        <padding>
+            <Insets top="15" right="15" bottom="15" left="15"/>
+        </padding>
+    </HBox>
+</StackPane>
+

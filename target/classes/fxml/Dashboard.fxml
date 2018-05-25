@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXDrawer?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import com.jfoenix.controls.JFXRippler?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXToolbar?>
+<?import com.jfoenix.transitions.hamburger.HamburgerBackArrowBasicTransition?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="250.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.daylist.controller.DashboardController">
+    <children>
+        <BorderPane>
+            <!--Toolbar-->
+            <top>
+                <VBox BorderPane.alignment="CENTER">
+                    <children>
+                        <JFXToolbar>
+                            <leftItems>
+                                <JFXRippler maskType="CIRCLE" style="-fx-ripple-color:WHITE;">
+                                    <StackPane fx:id="hamburgerContainerToolbar">
+                                        <children>
+                                            <JFXHamburger fx:id="hamburgerToolbar">
+                                                <animation>
+                                                    <HamburgerBackArrowBasicTransition />
+                                                </animation>
+                                            </JFXHamburger>
+                                        </children>
+                                    </StackPane>
+                                </JFXRippler>
+                                <Label fx:id="titleToolbar" text="Dashboard" styleClass="qf-20-b"/>
+                            </leftItems>
+                        </JFXToolbar>
+                    </children>
+                </VBox>
+            </top>
+            <!--Content-->
+            <center>
+                <JFXDrawer fx:id="drawer" BorderPane.alignment="CENTER" />
+            </center>
+        </BorderPane>
+    </children>
+</StackPane>

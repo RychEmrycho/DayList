@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXListView?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="sideDrawer" alignment="TOP_CENTER" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.daylist.controller.DrawerContentController">
+        <VBox alignment="CENTER">
+            <children>
+                <ImageView fitHeight="80.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../img/Logo%20Developnerz.png" />
+                    </image>
+                </ImageView>
+                <Label text="DayList" styleClass="qf-30-b" />
+                <Label text="Organize your day as easy as possible" textAlignment="CENTER" wrapText="true" styleClass="qf-14-b"/>
+            </children>
+            <padding>
+                <Insets bottom="35.0" left="15.0" right="15.0" top="35.0" />
+            </padding>
+        </VBox>
+        <JFXListView fx:id="sideDrawerList" styleClass="option-list-view" VBox.vgrow="ALWAYS" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+            <Label text="Dashboard" fx:id="dashboardLabelPage" styleClass="qf-20">
+                <graphic>
+                    <StackPane styleClass="custom-jfx-list-view-icon-container">
+                        <FontAwesomeIconView glyphName="HOME" size="2.5em" styleClass="option-jfx-list-view-icon">
+                            <StackPane.margin>
+                                <Insets right="25.0" />
+                            </StackPane.margin>
+                        </FontAwesomeIconView>
+                    </StackPane>
+                </graphic>
+            </Label>
+            <Label text="Complete" fx:id="completeLabelPage" styleClass="qf-20">
+                <graphic>
+                    <StackPane styleClass="custom-jfx-list-view-icon-container">
+                        <FontAwesomeIconView glyphName="CALENDAR_CHECK_ALT" size="2.5em" styleClass="option-jfx-list-view-icon">
+                            <StackPane.margin>
+                                <Insets right="25.0" />
+                            </StackPane.margin>
+                        </FontAwesomeIconView>
+                    </StackPane>
+                </graphic>
+            </Label>
+            <Label text="Archives" fx:id="archivesLabelPage" styleClass="qf-20">
+                <graphic>
+                    <StackPane styleClass="custom-jfx-list-view-icon-container">
+                        <FontAwesomeIconView glyphName="ARCHIVE" size="2.5em" styleClass="option-jfx-list-view-icon">
+                            <StackPane.margin>
+                                <Insets right="25.0" />
+                            </StackPane.margin>
+                        </FontAwesomeIconView>
+                    </StackPane>
+                </graphic>
+            </Label>
+            <Label text="Trash" fx:id="trashLabelPage" styleClass="qf-20">
+                <graphic>
+                    <StackPane styleClass="custom-jfx-list-view-icon-container">
+                        <FontAwesomeIconView glyphName="TRASH" size="2.5em" styleClass="option-jfx-list-view-icon">
+                            <StackPane.margin>
+                                <Insets right="25.0" />
+                            </StackPane.margin>
+                        </FontAwesomeIconView>
+                    </StackPane>
+                </graphic>
+            </Label>
+            <Label text="About" fx:id="aboutLabelPage" styleClass="qf-20">
+                <graphic>
+                    <StackPane styleClass="custom-jfx-list-view-icon-container">
+                        <FontAwesomeIconView glyphName="HEART" size="2.5em" styleClass="option-jfx-list-view-icon">
+                            <StackPane.margin>
+                                <Insets right="25.0" />
+                            </StackPane.margin>
+                        </FontAwesomeIconView>
+                    </StackPane>
+                </graphic>
+            </Label>
+            <padding>
+                <Insets bottom="15.0" left="25.0" right="25.0" top="15.0" />
+            </padding>
+            <VBox.margin>
+                <Insets />
+            </VBox.margin>
+        </JFXListView>
+        <Label text="DayList v.1 2018" styleClass="qf-15">
+            <padding>
+                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+            </padding>
+        </Label>
+</VBox>
